@@ -3,6 +3,7 @@ var makeQueue = function(){
 
   // Use an object with numeric keys to store values
   var storage = {};
+  //the size
   var size = 0;
   var first = 0;
   var endOfQueue = 0;
