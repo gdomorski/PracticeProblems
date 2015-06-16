@@ -5,7 +5,9 @@ var makeQueue = function(){
   var storage = {};
   //the size
   var size = 0;
+  //the first number
   var first = 0;
+  //the last
   var endOfQueue = 0;
 
   // Implement the methods below
