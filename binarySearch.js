@@ -1,35 +1,54 @@
 //declare a function call binary search that takes an array and target
 function binarySearch(arr, target){
-
-//find the largest index in the arr
-var highestIndex = arr.length - 1;
-//find the middle index;
-var middleIndex = Math.floor(highestIndex/2);
-
+    var result = -1;
     
-    //if there is nothing in the array
-    if(arr.length === 0){
-        //return -1
-        return -1;
+    // recursive subroutine
+    function subRoutine(array, index) {
+        // set index equal to the currentIndex or 0
+        index = index || 0;
+        
+        // break case
+        // [1]
+        if(array.length === 1) {
+            // check if our target is in the array
+            if(array[0] === target) {
+                // set the result index
+                result = index;
+                // kill the subroutine
+                return;
+            } else {
+                return;
+            }
+        }
+        
+        // find the middle of the arr
+        var middle = Math.floor(array.length / 2);
+        // check to see if arr[middleIndex] === target
+        if(array[middle] === target) {
+            // add the middle to the current index
+            index += middle;
+            // 
+            result = index;
+            return;
+        } else if(array[middle] > target) {
+            var firstHalf = array.slice(0, middle);
+            subRoutine(firstHalf);
+        } else {
+            var lastHalf = array.slice(middle);
+            index += middle;
+            subRoutine(lastHalf, index);
+        }
     }
-    
-    //if the target is equal to the value
-    if(target === arr[middleIndex]){
-        //return the index
-        return middleIndex;
-    //if it is greater than the value
-    } else if(target > arr[middleIndex]){
-        //get everything from the middle index to the end
-        arr = arr.slice(middleIndex);
-    //if it is equal or greater than, it must be less than
-    } else {
-    	//get everything from the beginning of the array to the middle index;
-        arr = arr.slice(0, middleIndex);
-    }
-    
-    //call binarySearch again
-    binarySearch(arr, target);
    
+   
+   // call subroutine on our array for the first time   
+   subRoutine(arr);
+   // return the result after subroutine is finished running
+   return result;
 }
-    
-    
+
+var x = binarySearch([1,2,3,4,5,6,7,8,9], 0);
+console.log(x);
+
+// Arr.indexOf by default uses what type of time complexity?
+// linear
