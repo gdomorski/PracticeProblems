@@ -9,7 +9,6 @@ function cardCounter(arr){
     for(var i = 0; i < arr.length; i++){
         if(plusOne.indexOf(arr[i]) !== -1){
          count++;
-         console.log(count);
         }else if(minusOne.indexOf(arr[i]) != -1){
          count--;   
         }
