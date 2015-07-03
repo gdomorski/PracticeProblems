@@ -6,7 +6,6 @@ function twoSum(arr, target) {
     while( left !== right ) {
         var sum = arr[left] + arr[right];
         if (sum === target) {
-            console.log(iterations)
             return true;
         } else if (sum < target) {
             left++
