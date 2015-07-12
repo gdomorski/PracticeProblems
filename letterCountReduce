@@ -1,25 +1,15 @@
 //Here is an example of how to count letters in a string with the reduce callback
 
 
-function letterCount (str, letter){
-    
-var counter = 0;
-
-    reduce(str, function(a, b){
-       
-       if(a === letter){
-            counter++;
-       }
-       
-       if(b === letter){
-           counter++;
-       }
-        
-    });
-    
-    return counter;
-    
-}
+var letter = 'c';
+var arr = ['a','a','b','c', 'c', 'c', 'd','e','f','g'];
 
 
-letterCount('aaaabbbbcccccdde', 'b');
+arr.reduce(function(total,item) { 
+    
+    if(item === letter){
+        total += 1;
+    }
+    return total;
+   
+}, 0)   
