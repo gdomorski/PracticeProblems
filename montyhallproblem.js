@@ -23,6 +23,7 @@ var doors = ['car', 'goat', 'goat'];
 		var userPick = Math.round(Math.random() * doors.length);
 			//if the person picks the car, add to the counter;
 			if(doors[userPick] === 'car'){
+			//add to the does not switch counter;
 			doesNotSwitchCounter++;
 			};
 		}
@@ -57,7 +58,7 @@ var doors = ['car', 'goat', 'goat'];
 	//call function2
 	doesSwitch();
 
-
+	//return the solution
 	return 'The person does not make the switch wins ' + doesNotSwitch + ' times . While the person who does won ' + doesSwitch + ' times.'
 
 
