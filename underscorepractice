@@ -176,10 +176,10 @@ console.log(objSize(user));
 //having trouble with this one...
 
 function speak(obj){
-	return _.invoke(obj.favoriteProducts, 'addFive');
+	return _.invoke(obj.favoriteProducts, 'sort');
 }
 
-console.log(speak(user));
+console.log(speak(user), 'whatup');
 
 
 
@@ -225,8 +225,26 @@ function allProducts (obj){
 
 }
 
-
 console.log(allProducts(user));
+
+
+function getInfo (obj){
+	return _.pick(obj, 'username', 'country');
+
+}
+
+
+console.log(getInfo(user));
+
+
+function everythingButlastFav (obj){
+	return _.initial(obj.favoriteProducts);
+
+}
+
+console.log(everythingButlastFav(user), 'hollas');
+
+
 
 
 
