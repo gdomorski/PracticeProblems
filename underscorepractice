@@ -4,7 +4,7 @@
 
 
  	var user = {
-   	  username: 'maseh87',
+   	  username: 'gdomorski',
       country: 'us',
       favoriteProducts: [
         12345,
@@ -18,6 +18,11 @@
         12345,
         54321,
         246764
+      ],
+      otherProducts: [
+      	888888,
+      	999999,
+      	111111,
       ],
       addFive: function(value){
       	return value + 5;
@@ -204,6 +209,24 @@ function findFirstInStockProduct (obj){
 }
 
 console.log(findFirstInStockProduct(user));
+
+
+function omitProducts (obj){
+	return _.without(obj.favoriteProducts, 7633, 86478)
+
+}
+
+console.log(omitProducts(user))
+
+
+
+function allProducts (obj){
+	return _.union(obj.favoriteProducts, obj.otherProducts)
+
+}
+
+
+console.log(allProducts(user));
 
 
 
