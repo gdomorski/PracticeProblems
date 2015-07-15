@@ -193,7 +193,17 @@ function addSomething(obj){
 	});
 }
 
-console.log(addSomething(user), 'holla')
+console.log(addSomething(user))
+
+
+
+function findFirstInStockProduct (obj){
+	return _.find(obj.inStockProducts, function(num){ 
+		return num > 0; 
+	});
+}
+
+console.log(findFirstInStockProduct(user));
 
 
 
