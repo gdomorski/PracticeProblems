@@ -26,10 +26,10 @@ function merge(left, right) {
     while (left.length && right.length) {
         //if the left side is less than or equal to the right side
         if (left[0] <= right[0]) {
-            //push the values to the left side...
+            //push the values to the result from the left side.
             result.push(left.shift());
         } else {
-            //push the values to the right side...
+            //or else...push in the values from right side;
             result.push(right.shift());
         }
     }
