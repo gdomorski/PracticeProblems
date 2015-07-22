@@ -3,9 +3,9 @@ var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
 function mergeSort(arr){
  
     //if the array only has one element, return it
-    if (arr.length < 2)
+    if (arr.length < 2){
         return arr;
- 
+    }
     //get the middle value
     var middle = parseInt(arr.length / 2);
     //get all the values to the left of the middle
@@ -35,13 +35,13 @@ function merge(left, right) {
     }
  
     //while the left side has a length, push it in the result value;
-    while (left.length)
+    while (left.length){
         result.push(left.shift());
- 
+    }
     //the right side has a lengt, push it in the result value;
-    while (right.length)
+    while (right.length){
         result.push(right.shift());
- 
+    }
     //return the result.
     return result;
 }
