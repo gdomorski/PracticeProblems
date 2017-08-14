@@ -14,7 +14,7 @@ const kadaneAlgo = arraySeq => {
         
         maxSoFar = Math.max(maxSoFar, maxEndingHere);
         if (maxSoFar === maxEndingHere) {
-            largestSubarray = arrayMEHTracker.slice(0);
+            largestSubarray = arrayTracker.slice(0);
         }
     });
     
