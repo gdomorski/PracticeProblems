@@ -29,22 +29,16 @@ At some point the hands will be touching together and there will be no angle, 12
 
 
 function findAngle(hour, minute){
-	var hourHand = Math.abs((hour * 30) + 0.5 * minute);  //Step1
-	var minutesHand = Math.abs((minute/6) * 30); //Step2
+  let hourHand = Math.abs((hour * 30) + 0.5 * minute);  //Step1
+  let minutesHand = Math.abs((minute/6) * 30); //Step2
 	
-	if((hourHand === 360 && minutesHand === 0) || (hourHand === minutesHand)){   //Step 4
-	    return 0;
-	}
+  if((hourHand === 360 && minutesHand === 0) || (hourHand === minutesHand)){   //Step 4
+    return 0;
+  }
 
-	var angle1 = hourHand - minutesHand; //Step 3 
-	var angle2 = minutesHand - hourHand;
+  let angle1 = hourHand - minutesHand; //Step 3 
+  let angle2 = minutesHand - hourHand;
 
-	if(angle1>angle2){  //which angle is bigger, or are they equal?
-		return angle1;
-	}else{
-		return angle2;
+  return (angle1 > angle2) ? angle1 : angle2;
 
-	}
-
-}
 }
